@@ -1,0 +1,70 @@
+.App nav {
+  width: 100%;
+  padding: 20px;
+  background-color: azure;
+}
+
+.App ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+.App ul a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+footer {
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+  background-color: azure;
+  color: black;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+}
+
+.table tbody tr {
+  cursor: pointer;
+}
+
+.table tbody tr button {
+  outline: 0;
+  border-radius: 4px;
+  background-color: yellow;
+  padding: 2px 8px;
+}
+
+.table tbody tr button:active {
+  background-color: yellowgreen;
+}
+
+.table tbody tr button:first-child {
+  margin-right: 10px;
+}
+
+.heading {
+  padding: 10px 0;
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: tomato;
+  font-weight: 800;
+}
+form{
+  text-align: start;
+}
+.form-control {
+  background-color: #343a40;
+}
