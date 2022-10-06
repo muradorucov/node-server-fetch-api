@@ -62,9 +62,11 @@ footer {
   color: tomato;
   font-weight: 800;
 }
-form{
+
+form {
   text-align: start;
 }
+
 .form-control {
   background-color: #343a40;
 }

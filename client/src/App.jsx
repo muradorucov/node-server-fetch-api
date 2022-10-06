@@ -1,14 +1,16 @@
-import { Route, Routes } from "react-router";
-import { Link } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { Route, Routes } from 'react-router'
 
-import "./App.css";
-import About from "./page/about";
-import HomePage from "./page/HomePage";
-import NotFound from "./page/NotFound";
-import UserAdd from "./page/UserAdd";
-import Users from "./page/users";
+import { Link } from 'react-router-dom'
 
-function App() {
+import './App.css'
+import About from './page/about'
+import HomePage from './page/HomePage'
+import NotFound from './page/NotFound'
+import UserAdd from './page/UserAdd'
+import Users from './page/users'
+
+function App () {
   return (
     <>
       <div className="App">
@@ -31,7 +33,7 @@ function App() {
       </Routes>
 
     </>
-  );
+  )
 }
 
-export default App;
+export default App
