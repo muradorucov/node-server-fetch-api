@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../App.css";
 function Users() {
+    const [product, setProduct] = useState()
+
+
+    useEffect(() => {
+        fetch('http://localhost:8080/products')
+            .then((response) => response.json())
+            .then((actualData) => setProduct(actualData))
+    }, []);
+    
     return (
         <div className="container">
             <h1 className='heading'>Users List</h1>
@@ -9,96 +18,27 @@ function Users() {
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First name</th>
-                        <th scope="col">Last name</th>
-                        <th scope="col">Birthdate</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">quantityPerUnit</th>
+                        <th scope="col">unitPrice</th>
+                        <th scope="col">unitsInStock</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Murad</td>
-                        <td>Orucov</td>
-                        <td>28.06.2000</td>
-                        <td>orucowmurad@gmail.com</td>
-                        <td>
-                            <button>delete</button>
-                            <button>detail</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Murad</td>
-                        <td>Orucov</td>
-                        <td>28.06.2000</td>
-                        <td>orucowmurad@gmail.com</td>
-                        <td>
-                            <button>delete</button>
-                            <button>detail</button>
-                        </td>
-                    </tr><tr>
-                        <th scope="row">1</th>
-                        <td>Murad</td>
-                        <td>Orucov</td>
-                        <td>28.06.2000</td>
-                        <td>orucowmurad@gmail.com</td>
-                        <td>
-                            <button>delete</button>
-                            <button>detail</button>
-                        </td>
-                    </tr><tr>
-                        <th scope="row">1</th>
-                        <td>Murad</td>
-                        <td>Orucov</td>
-                        <td>28.06.2000</td>
-                        <td>orucowmurad@gmail.com</td>
-                        <td>
-                            <button>delete</button>
-                            <button>detail</button>
-                        </td>
-                    </tr><tr>
-                        <th scope="row">1</th>
-                        <td>Murad</td>
-                        <td>Orucov</td>
-                        <td>28.06.2000</td>
-                        <td>orucowmurad@gmail.com</td>
-                        <td>
-                            <button>delete</button>
-                            <button>detail</button>
-                        </td>
-                    </tr><tr>
-                        <th scope="row">1</th>
-                        <td>Murad</td>
-                        <td>Orucov</td>
-                        <td>28.06.2000</td>
-                        <td>orucowmurad@gmail.com</td>
-                        <td>
-                            <button>delete</button>
-                            <button>detail</button>
-                        </td>
-                    </tr><tr>
-                        <th scope="row">1</th>
-                        <td>Murad</td>
-                        <td>Orucov</td>
-                        <td>28.06.2000</td>
-                        <td>orucowmurad@gmail.com</td>
-                        <td>
-                            <button>delete</button>
-                            <button>detail</button>
-                        </td>
-                    </tr><tr>
-                        <th scope="row">1</th>
-                        <td>Murad</td>
-                        <td>Orucov</td>
-                        <td>28.06.2000</td>
-                        <td>orucowmurad@gmail.com</td>
-                        <td>
-                            <button>delete</button>
-                            <button>detail</button>
-                        </td>
-                    </tr>
+                    {product && product.map(item => (
+                        <tr key={item?.id}>
+                            <th scope="row">{item?.id}</th>
+                            <td>{item?.name}</td>
+                            <td>{item?.quantityPerUnit}</td>
+                            <td>{item?.unitPrice}</td>
+                            <td>{item?.unitsInStock}</td>
+                            <td>
+                                <button>delete</button>
+                                <button>detail</button>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
